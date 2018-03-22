@@ -10,15 +10,20 @@
 
   loadContributions();
   var typed = new Typed("#text", {
-    strings: ["Runner", "Amante de la pizza", ""],
+    strings: [
+      "Runner",
+      "Clean code defender",
+      "Roman legionary wannabe",
+      "Old school gamer"
+    ],
     typeSpeed: 100,
     backDelay: 1000,
     startDelay: 1000,
     loop: true,
     fadeOut: true
   });
-  var waypoint = new Waypoint({
-    element: $(".header-limit"),
+  var waypoint1 = new Waypoint({
+    element: $(".hero-header"),
     handler: function(direction) {
       if (direction == "down") {
         $(".menu-list").addClass("fixed-top menu-fixed");
@@ -29,12 +34,45 @@
       }
     }
   });
+  // var waypoint2 = new Waypoint({
+  //   element: $(".section-main"),
+  //   handler: function(direction) {
+  //     if (direction == "down") {
+  //       $(".menu-list").addClass("menu-fixed-left");
+  //     } else {
+  //       $(".menu-list").removeClass("menu-fixed-left ");
+  //     }
+  //   }
+  // });
 
-  var waypoint = new Waypoint({
+  var waypointC = new Waypoint({
+    element: $(".feature-c"),
+    handler: function(direction) {
+      if (direction == "down") {
+        $(".menu-list").addClass("bg-c");
+      } else {
+        $(".menu-list").removeClass("bg-c");
+      }
+    },
+    offset: 30
+  });
+
+  var waypointJ = new Waypoint({
+    element: $(".feature-j"),
+    handler: function(direction) {
+      if (direction == "down") {
+        $(".menu-list").addClass("bg-j");
+      } else {
+        $(".menu-list").removeClass("bg-j");
+      }
+    },
+    offset: 30
+  });
+  var waypoint3 = new Waypoint({
     element: $(".videogamer"),
     handler: function(direction) {
       if (direction == "down") {
-        $(".videogamer img").addClass("fixed-top");
+        $(".videogamer img").addClass("fixed-top octo");
       } else {
         $(".videogamer img").removeClass("fixed-top");
         $(".videogamer img").removeClass("fade-out");
@@ -50,5 +88,18 @@
       $(".videogamer img").addClass("fade-out");
       $(".videogamer img").removeClass("fade-in");
     }
+  });
+
+  $(".js-gist-c").click(function() {
+    $("#gist-c").fadeIn();
+    $("#feature-c").fadeOut();
+    $(this).fadeOut();
+    $(".js-gist-c-toggle").fadeIn();
+  });
+  $(".js-gist-c-toggle").click(function() {
+    $("#gist-c").fadeOut();
+    $("#feature-c").fadeIn();
+    $(".js-gist-c").fadeIn();
+    $(this).fadeOut();
   });
 })();
