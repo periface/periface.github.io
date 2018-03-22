@@ -172,3 +172,6 @@ section {
 .menu-fixed li {
   line-height: 50px;
 }
+.menu-item {
+  margin-right: 10px;
+}
