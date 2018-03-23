@@ -68,6 +68,29 @@
     },
     offset: 30
   });
+
+  var waypointH = new Waypoint({
+    element: $(".feature-h"),
+    handler: function(direction) {
+      if (direction == "down") {
+        $(".menu-list").addClass("bg-h");
+      } else {
+        $(".menu-list").removeClass("bg-h");
+      }
+    },
+    offset: 30
+  });
+  var waypointA = new Waypoint({
+    element: $(".feature-a"),
+    handler: function(direction) {
+      if (direction == "down") {
+        $(".menu-list").addClass("bg-a");
+      } else {
+        $(".menu-list").removeClass("bg-a");
+      }
+    },
+    offset: 30
+  });
   var waypoint3 = new Waypoint({
     element: $(".videogamer"),
     handler: function(direction) {
