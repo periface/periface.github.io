@@ -27,24 +27,11 @@
     handler: function(direction) {
       if (direction == "down") {
         $(".menu-list").addClass("fixed-top menu-fixed");
-        $(".menu-photo").fadeIn();
       } else {
         $(".menu-list").removeClass("fixed-top menu-fixed");
-        $(".menu-photo").fadeOut();
       }
     }
   });
-  // var waypoint2 = new Waypoint({
-  //   element: $(".section-main"),
-  //   handler: function(direction) {
-  //     if (direction == "down") {
-  //       $(".menu-list").addClass("menu-fixed-left");
-  //     } else {
-  //       $(".menu-list").removeClass("menu-fixed-left ");
-  //     }
-  //   }
-  // });
-
   var waypointC = new Waypoint({
     element: $(".feature-c"),
     handler: function(direction) {
@@ -102,7 +89,7 @@
         $(".videogamer img").removeClass("fade-in");
       }
     },
-    offset: 30
+    offset: 100
   });
 
   var waypoint = new Waypoint({

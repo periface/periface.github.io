@@ -193,7 +193,7 @@ section {
   margin-right: 10px;
 }
 .octo {
-  top: 50px;
+  top: 60px;
 }
 .bg-c {
   background-color: #953dac;
@@ -220,7 +220,6 @@ section {
 
 .bg-a {
   background-color: #c3002f;
-  color: white !important;
 }
 .bg-a * {
   color: white !important;
