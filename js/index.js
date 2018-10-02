@@ -116,6 +116,13 @@ function startSpy() {
     $(activatedElement).removeClass('show-modal');
     endVideos();
   });
+  $(document).keyup(function (e) {
+    if (e.key === "Escape") { // escape key maps to keycode `27`
+      // <DO YOUR WORK HERE>
+      $(activatedElement).removeClass('show-modal');
+      endVideos();
+    }
+  });
 }
 //Inicia el video cuando se carga el modal
 function startVideo($elm) {
