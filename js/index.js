@@ -113,12 +113,18 @@ function startSpy() {
   $('#marco').click(() => {
     activatedElement = '#marcoModal';
     startVideo($(activatedElement));
-    $('#marcoModal').addClass('show-modal');
+    minimizeCoaches('marco');
+    setTimeout(() => {
+      $('#marcoModal').addClass('show-modal');
+    }, 1000);
   });
   $('#victor').click(() => {
     activatedElement = '#victorModal';
     startVideo($(activatedElement));
-    $('#victorModal').addClass('show-modal');
+    minimizeCoaches('victor');
+    setTimeout(() => {
+      $('#victorModal').addClass('show-modal');
+    }, 1000);
   });
   $('.btn-close').click(() => {
     removeAnimationsAndVideos();
