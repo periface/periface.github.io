@@ -1,7 +1,7 @@
 ﻿var camera, scene, renderer, geometry, material, mesh;
 
-init();
-animate();
+// init();
+// animate();
 smoothScroll();
 //startSlider();
 startSpy();
@@ -91,6 +91,7 @@ function smoothScroll() {
 }
 var activatedElement;
 function startSpy() {
+  pauseVideo();
   $('#anita').click(() => {
     activatedElement = '#anitaModal';
     startVideo($(activatedElement));
@@ -154,7 +155,13 @@ function startVideo($elm) {
   setTimeout(() => {
     var elm = $elm.find('video')[0];
     elm.play();
-  }, 500);
+  }, 1000);
+}
+function pauseVideo() {
+  setTimeout(() => {
+    var elm = $('body').find('video')[0];
+    elm.pause();
+  }, 1000);
 }
 //Reinicia los videos
 function endVideos() {
