@@ -208,6 +208,28 @@ canvas {
           filter: blur(3px);
 }
 
+.scale-0 {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.scale-1 {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.scale-1 img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-filter: blur(0);
+          filter: blur(0);
+}
+
+.send-left {
+  position: relative;
+  left: 0%;
+}
+
 /*SERVICES SECTION*/
 .services {
   width: 75%;
@@ -243,6 +265,8 @@ canvas {
 
 .coach .img-container-hover {
   overflow: hidden;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .coach .img-container-hover h3 {

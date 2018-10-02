@@ -92,15 +92,22 @@ function smoothScroll() {
 var activatedElement;
 function startSpy() {
   pauseVideo();
-  $('#anita').click(() => {
+  $('#anita').click(e => {
+    e.stopPropagation();
     activatedElement = '#anitaModal';
     startVideo($(activatedElement));
-    $('#anitaModal').addClass('show-modal');
+    minimizeCoaches('anita');
+    setTimeout(() => {
+      $('#anitaModal').addClass('show-modal');
+    }, 1000);
   });
   $('#pichon').click(() => {
     activatedElement = '#pichonModal';
     startVideo($(activatedElement));
-    $('#pichonModal').addClass('show-modal');
+    minimizeCoaches('pichon');
+    setTimeout(() => {
+      $('#pichonModal').addClass('show-modal');
+    }, 1000);
   });
 
   $('#marco').click(() => {
@@ -124,7 +131,16 @@ function startSpy() {
     }
   });
 }
-
+function minimizeCoaches(selector) {
+  $('.coach').each((i, elm) => {
+    let img = $(elm).find('.img-container-hover')[0];
+    if ($(elm).attr('id') === selector) {
+      $(img).addClass('scale-1 send-left');
+    } else {
+      $(img).addClass('scale-0');
+    }
+  });
+}
 function removeAnimationsAndVideos() {
   var video = $(activatedElement).find('video')[0];
   var bios = $(activatedElement).find('.bios')[0];
@@ -148,6 +164,10 @@ function removeAnimationsAndVideos() {
       );
     }
   );
+  $('.coach').each((i, elm) => {
+    let img = $(elm).find('.img-container-hover')[0];
+    $(img).removeClass('scale-1 send-left scale-0');
+  });
 }
 
 //Inicia el video cuando se carga el modal
