@@ -1,7 +1,7 @@
 ﻿var camera, scene, renderer, geometry, material, mesh;
 
-// init();
-// animate();
+init();
+animate();
 smoothScroll();
 //startSlider();
 startSpy();
@@ -113,17 +113,42 @@ function startSpy() {
     $('#victorModal').addClass('show-modal');
   });
   $('.btn-close').click(() => {
-    $(activatedElement).removeClass('show-modal');
-    endVideos();
+    removeAnimationsAndVideos();
   });
-  $(document).keyup(function (e) {
-    if (e.key === "Escape") { // escape key maps to keycode `27`
+  $(document).keyup(function(e) {
+    if (e.key === 'Escape') {
+      // escape key maps to keycode `27`
       // <DO YOUR WORK HERE>
-      $(activatedElement).removeClass('show-modal');
-      endVideos();
+      removeAnimationsAndVideos();
     }
   });
 }
+
+function removeAnimationsAndVideos() {
+  var video = $(activatedElement).find('video')[0];
+  var bios = $(activatedElement).find('.bios')[0];
+  $(video).animate(
+    {
+      opacity: 0
+    },
+    500,
+    function() {
+      $(bios).animate(
+        {
+          opacity: 0
+        },
+        500,
+        function() {
+          $(activatedElement).removeClass('show-modal');
+          endVideos();
+          $(video).css('opacity', 1);
+          $(bios).css('opacity', 1);
+        }
+      );
+    }
+  );
+}
+
 //Inicia el video cuando se carga el modal
 function startVideo($elm) {
   setTimeout(() => {
