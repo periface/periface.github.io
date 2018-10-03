@@ -3,9 +3,8 @@
 // init();
 // animate();
 smoothScroll();
-//startSlider();
-startSpy();
-
+coachesEvents();
+startServicesEvents();
 //https://codepen.io/teolitto/pen/KwOVvL
 function init() {
   clock = new THREE.Clock();
@@ -90,7 +89,7 @@ function smoothScroll() {
   var scroll = new SmoothScroll('a[href*="#"]');
 }
 var activatedElement;
-function startSpy() {
+function coachesEvents() {
   pauseVideo();
   $('#anita').click(e => {
     e.stopPropagation();
@@ -195,33 +194,19 @@ function endVideos() {
     elm.load();
   });
 }
-function startSlider() {
-  var bgs = ['/images/bg/bg1.jpg', '/images/bg/bg2.jpg', '/images/bg/bg3.jpg'];
-  setInterval(() => {
-    var image = bgs[Math.floor(Math.random() * bgs.length)];
-    var element = $('.hero-container');
-    element.css('background-image', 'url(' + image + ')');
-  }, 5000);
-}
-
-/**
- *
- */
-const times = [];
-let fps;
-
-function refreshLoop() {
-  window.requestAnimationFrame(() => {
-    const now = performance.now();
-    while (times.length > 0 && times[0] <= now - 1000) {
-      times.shift();
-    }
-    times.push(now);
-    fps = times.length;
-    if (fps <= 40) {
-    }
-    refreshLoop();
+var serviceActivated;
+function startServicesEvents() {
+  $('.js-service-elite').click(() => {
+    serviceActivated = '#serviceModalOne';
+    $('#serviceModalOne').addClass('service-modal-show');
+    setTimeout(() => {
+      $('#serviceModalOne').addClass('service-modal-height');
+    }, 1000);
+  });
+  $('.close-btn').click(() => {
+    $(serviceActivated).removeClass('service-modal-height');
+    setTimeout(() => {
+      $(serviceActivated).removeClass('service-modal-show');
+    }, 1000);
   });
 }
-
-refreshLoop();
