@@ -231,7 +231,12 @@ function changeBg() {
     var random = images[Math.floor(Math.random() * images.length)];
     img.fadeOut('slow', function() {
       img.attr('src', random);
-      img.fadeIn('slow');
+
+      if (img.data('loaded')) {
+        // loaded, so do stuff
+
+        img.fadeIn('slow');
+      }
     });
     var index = images.indexOf(random);
     images.splice(index, 1);
