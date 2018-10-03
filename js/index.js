@@ -1,7 +1,7 @@
 ﻿var camera, scene, renderer, geometry, material, mesh;
 
-init();
-animate();
+// init();
+// animate();
 smoothScroll();
 coachesEvents();
 startServicesEvents();
@@ -235,6 +235,7 @@ function changeBg() {
     });
     var index = images.indexOf(random);
     images.splice(index, 1);
+    console.log(images);
   }, 5000);
 }
 changeBg();
