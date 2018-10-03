@@ -1,7 +1,7 @@
 ﻿var camera, scene, renderer, geometry, material, mesh;
 
-// init();
-// animate();
+init();
+animate();
 smoothScroll();
 coachesEvents();
 startServicesEvents();
@@ -203,12 +203,6 @@ function startServicesEvents() {
       $('#serviceModalOne').addClass('service-modal-height');
     }, 1000);
   });
-
-
-
-
-
-
   $('.close-btn').click(() => {
     $(serviceActivated).removeClass('service-modal-height');
     setTimeout(() => {
@@ -216,3 +210,31 @@ function startServicesEvents() {
     }, 1000);
   });
 }
+function changeBg() {
+  var images = [
+    '/images/bg/bg4.jpg',
+    '/images/bg/bg5.jpg',
+    '/images/bg/bg6.jpg',
+    '/images/bg/bg7.jpg'
+  ];
+  var img = $('#bgImg');
+  setInterval(function() {
+    if (images.length <= 0) {
+      images = [
+        '/images/bg/bg1.jpg',
+        '/images/bg/bg4.jpg',
+        '/images/bg/bg5.jpg',
+        '/images/bg/bg6.jpg',
+        '/images/bg/bg7.jpg'
+      ];
+    }
+    var random = images[Math.floor(Math.random() * images.length)];
+    img.fadeOut('slow', function() {
+      img.attr('src', random);
+      img.fadeIn('slow');
+    });
+    var index = images.indexOf(random);
+    images.splice(index, 1);
+  }, 5000);
+}
+changeBg();

@@ -18,12 +18,21 @@ canvas {
   z-index: 999999;
   height: 100vh;
   position: relative;
-  background: url('/images/bg/bg1.jpg');
+  //background: url('/images/bg/bg1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-
+  .hero-bg {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    z-index: -10;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
   .menu {
     left: -100px;
     animation: leftToRight 1.2s forwards 0.5s linear;

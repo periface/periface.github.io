@@ -20,11 +20,22 @@ canvas {
   z-index: 999999;
   height: 100vh;
   position: relative;
-  background: url("/images/bg/bg1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
+}
+
+.hero-container .hero-bg {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  z-index: -10;
+}
+
+.hero-container .hero-bg img {
+  width: 100%;
+  height: auto;
 }
 
 .hero-container .menu {
