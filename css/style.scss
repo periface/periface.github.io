@@ -418,7 +418,7 @@ canvas {
   position: fixed;
   height: 20vh;
   left: -100%;
-  transition: all 2s;
+  transition: all 1s;
   top: 0;
   background: black;
   z-index: 9999999;
@@ -445,7 +445,7 @@ canvas {
   .service-info {
     width: 70%;
     opacity: 0;
-    transition: all 2s;
+    transition: all 1s;
     padding: 40px;
     margin-top: 20%;
     margin: 0 auto;
@@ -455,13 +455,13 @@ canvas {
       color: white;
       text-align: justify;
       opacity: 0;
-      transition: all 2s;
+      transition: all 1s;
     }
     h4 {
       color: white;
       text-align: justify;
       opacity: 0;
-      transition: all 2s;
+      transition: all 1s;
     }
   }
 }

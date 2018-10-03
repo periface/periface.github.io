@@ -201,7 +201,7 @@ function startServicesEvents() {
     $('#serviceModalOne').addClass('service-modal-show');
     setTimeout(() => {
       $('#serviceModalOne').addClass('service-modal-height');
-    }, 2000);
+    }, 1000);
   });
 
 
@@ -213,6 +213,6 @@ function startServicesEvents() {
     $(serviceActivated).removeClass('service-modal-height');
     setTimeout(() => {
       $(serviceActivated).removeClass('service-modal-show');
-    }, 2000);
+    }, 1000);
   });
 }

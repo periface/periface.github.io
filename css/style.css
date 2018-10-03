@@ -482,8 +482,8 @@ canvas {
   position: fixed;
   height: 20vh;
   left: -100%;
-  -webkit-transition: all 2s;
-  transition: all 2s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
   top: 0;
   background: black;
   z-index: 9999999;
@@ -514,8 +514,8 @@ canvas {
 .service-modal .service-info {
   width: 70%;
   opacity: 0;
-  -webkit-transition: all 2s;
-  transition: all 2s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
   padding: 40px;
   margin-top: 20%;
   margin: 0 auto;
@@ -527,16 +527,16 @@ canvas {
   color: white;
   text-align: justify;
   opacity: 0;
-  -webkit-transition: all 2s;
-  transition: all 2s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .service-modal .service-info h4 {
   color: white;
   text-align: justify;
   opacity: 0;
-  -webkit-transition: all 2s;
-  transition: all 2s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .service-modal-show {
