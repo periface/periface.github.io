@@ -507,7 +507,7 @@ canvas {
 }
 
 .service-modal .bg {
-  background: url(https://instagram.fntr3-1.fna.fbcdn.net/vp/3eb17c7de02b3e83aff3f27a9d41cb73/5C5C82F2/t51.2885-15/e35/41579852_700184653680194_802280994422709881_n.jpg);
+  background: url(/images/bg/chaviza.jpg);
   -webkit-filter: grayscale(2);
   background-repeat: no-repeat;
   background-size: cover;
