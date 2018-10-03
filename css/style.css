@@ -489,6 +489,12 @@ canvas {
   z-index: 9999999;
 }
 
+.service-modal .close-btn {
+  position: absolute;
+  left: 40px;
+  top: 10px;
+}
+
 .service-modal .bg {
   background: url(https://instagram.fntr3-1.fna.fbcdn.net/vp/3eb17c7de02b3e83aff3f27a9d41cb73/5C5C82F2/t51.2885-15/e35/41579852_700184653680194_802280994422709881_n.jpg);
   -webkit-filter: grayscale(2);
@@ -536,12 +542,6 @@ canvas {
 .service-modal-show {
   left: 0 !important;
   width: 100%;
-}
-
-.service-modal-show .close-btn {
-  position: absolute;
-  left: 40px;
-  top: 10px;
 }
 
 .service-modal-show .service-info {

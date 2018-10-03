@@ -213,6 +213,6 @@ function startServicesEvents() {
     $(serviceActivated).removeClass('service-modal-height');
     setTimeout(() => {
       $(serviceActivated).removeClass('service-modal-show');
-    }, 1000);
+    }, 2000);
   });
 }
