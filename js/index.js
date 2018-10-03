@@ -1,7 +1,7 @@
 ﻿var camera, scene, renderer, geometry, material, mesh;
 
-// init();
-// animate();
+init();
+animate();
 smoothScroll();
 coachesEvents();
 startServicesEvents();
