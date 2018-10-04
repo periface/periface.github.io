@@ -353,6 +353,11 @@ canvas {
   top: 0;
 }
 
+.coach-details .info-container {
+  height: 100%;
+  width: 100%;
+}
+
 .coach-details .info-container .bios {
   overflow: hidden;
   height: 100%;
@@ -380,36 +385,28 @@ canvas {
   background-position: initial;
   -webkit-transition: all 1s;
   transition: all 1s;
-  opacity: 0;
 }
 
 .coach-details .info-container .bios .bios-info {
-  opacity: 0;
   position: absolute;
   top: 20%;
-  left: 12%;
+  left: -100%;
   padding: 40px;
   width: 75%;
   background: #00000047;
-  -webkit-transition: all 1s;
-  transition: all 1s;
+  -webkit-transition: all 1s 1s;
+  transition: all 1s 1s;
 }
 
 .coach-details .info-container .bios .bios-info h2 {
   color: white;
   border-bottom: 1px solid #fad925;
-  opacity: 0;
-  -webkit-transition: all 1s;
-  transition: all 1s;
 }
 
 .coach-details .info-container .bios .bios-info p {
   color: white;
   text-align: justify;
   font-size: 1.5rem;
-  opacity: 0;
-  -webkit-transition: all 1s;
-  transition: all 1s;
 }
 
 .coach-details .info-container .image {
@@ -417,8 +414,8 @@ canvas {
   margin: 0 auto;
   text-align: center;
   display: none;
-  -webkit-transition: right 1s 4s;
-  transition: right 1s 4s;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
   position: relative;
   right: -100%;
 }
@@ -426,11 +423,65 @@ canvas {
 .coach-details .info-container .image video {
   width: 100%;
   height: 100%;
-  padding: 25px;
-  background: url(/images/bg/bg2.jpg);
+  padding: 100px;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: white;
+  /* background-color: white; */
+  opacity: 0;
+  z-index: -10;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.coach-details .info-container .image .play-btn {
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #f0f8ff6e;
+  border: none;
+  padding: 20px;
+  cursor: pointer;
+  z-index: 10;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+.coach-details .info-container .image .play-btn img {
+  width: 40px;
+  height: 40px;
+}
+
+.coach-details .info-container .image .stop-btn {
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #f0f8ff6e;
+  border: none;
+  padding: 20px;
+  cursor: pointer;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  opacity: 0;
+  z-index: 1;
+}
+
+.coach-details .info-container .image .stop-btn img {
+  width: 40px;
+  height: 40px;
+}
+
+.coach-details .info-container .image .play-btn:hover {
+  border: 1px solid #fad925;
+}
+
+.coach-details .info-container .image .stop-btn:hover {
+  border: 1px solid #fad925;
 }
 
 .coach-details .close-elm {
@@ -449,22 +500,8 @@ canvas {
   opacity: 1;
 }
 
-.show-modal .info-container .bios .bios-bg {
-  opacity: 1;
-}
-
 .show-modal .info-container .bios .bios-info {
-  opacity: 1;
-}
-
-.show-modal .info-container .bios .bios-info h2 {
-  display: block;
-  opacity: 1;
-}
-
-.show-modal .info-container .bios .bios-info p {
-  display: block;
-  opacity: 1;
+  left: 12%;
 }
 
 .show-modal .info-container .image {
@@ -490,13 +527,25 @@ canvas {
   background: url(/images/pichonbg.jpg);
 }
 
+.pichon-right {
+  background: url(https://instagram.fntr3-1.fna.fbcdn.net/vp/9b15e5f8ae04ce7dc8762c63a4898e11/5C53215E/t51.2885-15/e35/40283884_272111360295157_2367381115947188224_n.jpg);
+}
+
 .anita {
   background: url(/images/anabg.jpg);
+}
+
+.anita-right {
+  background: url(/images/anitabw.jpg);
 }
 
 .marco {
   background: url(/images/marcobg.jpg);
   background-position: center !important;
+}
+
+.marco-right {
+  background: url(/images/marco.jpg);
 }
 
 .victor {

@@ -94,7 +94,6 @@ function coachesEvents() {
   $('#anita').click(e => {
     e.stopPropagation();
     activatedElement = '#anitaModal';
-    startVideo($(activatedElement));
     minimizeCoaches('anita');
     setTimeout(() => {
       $('#anitaModal').addClass('show-modal');
@@ -102,7 +101,6 @@ function coachesEvents() {
   });
   $('#pichon').click(() => {
     activatedElement = '#pichonModal';
-    startVideo($(activatedElement));
     minimizeCoaches('pichon');
     setTimeout(() => {
       $('#pichonModal').addClass('show-modal');
@@ -111,7 +109,6 @@ function coachesEvents() {
 
   $('#marco').click(() => {
     activatedElement = '#marcoModal';
-    startVideo($(activatedElement));
     minimizeCoaches('marco');
     setTimeout(() => {
       $('#marcoModal').addClass('show-modal');
@@ -119,7 +116,6 @@ function coachesEvents() {
   });
   $('#victor').click(() => {
     activatedElement = '#victorModal';
-    startVideo($(activatedElement));
     minimizeCoaches('victor');
     setTimeout(() => {
       $('#victorModal').addClass('show-modal');
@@ -127,6 +123,41 @@ function coachesEvents() {
   });
   $('.btn-close').click(() => {
     removeAnimationsAndVideos();
+  });
+
+  $('.play-btn').click(function() {
+    var self = $(this);
+    self.css('opacity', 0);
+    self.css('z-index', 0);
+    var video = $(activatedElement).find('video')[0];
+    $(video).animate(
+      {
+        opacity: 1
+      },
+      1000,
+      function() {
+        $('.stop-btn').css('opacity', 1);
+        $('.stop-btn').css('z-index', 10);
+        video.play();
+      }
+    );
+  });
+  $('.stop-btn').click(function() {
+    var self = $(this);
+    self.css('opacity', 0);
+    self.css('z-index', 0);
+    var video = $(activatedElement).find('video')[0];
+    $(video).animate(
+      {
+        opacity: 0
+      },
+      1000,
+      function() {
+        $('.play-btn').css('opacity', 1);
+        $('.play-btn').css('z-index', 10);
+        video.pause();
+      }
+    );
   });
   $(document).keyup(function(e) {
     if (e.key === 'Escape') {
@@ -147,40 +178,30 @@ function minimizeCoaches(selector) {
   });
 }
 function removeAnimationsAndVideos() {
-  var video = $(activatedElement).find('video')[0];
   var bios = $(activatedElement).find('.bios')[0];
-  $(video).animate(
-    {
-      opacity: 0
-    },
-    500,
-    function() {
-      $(bios).animate(
-        {
-          opacity: 0
-        },
-        500,
-        function() {
-          $(activatedElement).removeClass('show-modal');
-          endVideos();
-          $(video).css('opacity', 1);
-          $(bios).css('opacity', 1);
-        }
-      );
-    }
-  );
+  var biosInfo = $(activatedElement).find('.bios-info');
+  // $(image).css('transform', 'scale(0)');
+  // $(biosInfo).css('left', '-100%');
+  $(activatedElement).css('opacity', '0');
+
+  setTimeout(() => {
+    $(activatedElement).removeClass('show-modal');
+  }, 1000);
+
+  setTimeout(() => {
+    endVideos();
+    $(bios).css('opacity', 1);
+    $('.stop-btn').css('opacity', 0);
+    $('.stop-btn').css('z-index', 0);
+    $('.play-btn').css('opacity', 1);
+    $('.play-btn').css('z-index', 1);
+    $(activatedElement).css('opacity', '1');
+    $(biosInfo).removeAttr('style');
+  }, 2000);
   $('.coach').each((i, elm) => {
     let img = $(elm).find('.img-container-hover')[0];
     $(img).removeClass('scale-1 send-left scale-0');
   });
-}
-
-//Inicia el video cuando se carga el modal
-function startVideo($elm) {
-  setTimeout(() => {
-    var elm = $elm.find('video')[0];
-    elm.play();
-  }, 1000);
 }
 function pauseVideo() {
   setTimeout(() => {

@@ -302,6 +302,8 @@ canvas {
   position: fixed;
   top: 0;
   .info-container {
+    height: 100%;
+    width: 100%;
     .bios {
       overflow: hidden;
       height: 100%;
@@ -325,30 +327,24 @@ canvas {
         background-repeat: no-repeat;
         background-position: initial;
         transition: all 1s;
-        opacity: 0;
       }
       //contenido de texto
       .bios-info {
-        opacity: 0;
         position: absolute;
         top: 20%;
-        left: 12%;
+        left: -100%;
         padding: 40px;
         width: 75%;
         background: #00000047;
-        transition: all 1s;
+        transition: all 1s 1s;
         h2 {
           color: white;
           border-bottom: 1px solid #fad925;
-          opacity: 0;
-          transition: all 1s;
         }
         p {
           color: white;
           text-align: justify;
           font-size: 1.5rem;
-          opacity: 0;
-          transition: all 1s;
         }
       }
     }
@@ -357,19 +353,61 @@ canvas {
       margin: 0 auto;
       text-align: center;
       display: none;
-      transition: right 1s 4s;
+      transition: all 500ms;
+      position: relative;
+      right: -100%;
       video {
         width: 100%;
         height: 100%;
-        padding: 25px;
-        background: url(/images/bg/bg2.jpg);
-
+        padding: 100px;
         background-repeat: no-repeat;
         background-size: cover;
-        background-color: white;
+        /* background-color: white; */
+        opacity: 0;
+        z-index: -10;
+        transition: all 1s;
       }
-      position: relative;
-      right: -100%;
+      .play-btn {
+        border-radius: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #f0f8ff6e;
+        border: none;
+        padding: 20px;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 500ms;
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .stop-btn {
+        border-radius: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #f0f8ff6e;
+        border: none;
+        padding: 20px;
+        cursor: pointer;
+        transition: all 500ms;
+        opacity: 0;
+        z-index: 1;
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .play-btn:hover {
+        border: 1px solid #fad925;
+      }
+      .stop-btn:hover {
+        border: 1px solid #fad925;
+      }
     }
   }
   .close-elm {
@@ -386,22 +424,10 @@ canvas {
   .info-container {
     .bios {
       opacity: 1;
-      .bios-bg {
-        opacity: 1;
-      }
       .bios-info {
-        opacity: 1;
-        h2 {
-          display: block;
-          opacity: 1;
-        }
-        p {
-          display: block;
-          opacity: 1;
-        }
+        left: 12%;
       }
     }
-
     .image {
       display: block;
       float: right;
@@ -422,18 +448,26 @@ canvas {
 .pichon {
   background: url(/images/pichonbg.jpg);
 }
+.pichon-right {
+  background: url(https://instagram.fntr3-1.fna.fbcdn.net/vp/9b15e5f8ae04ce7dc8762c63a4898e11/5C53215E/t51.2885-15/e35/40283884_272111360295157_2367381115947188224_n.jpg);
+}
 .anita {
   background: url(/images/anabg.jpg);
+}
+.anita-right {
+  background: url(/images/anitabw.jpg);
 }
 .marco {
   background: url(/images/marcobg.jpg);
   background-position: center !important;
 }
+.marco-right {
+  background: url(/images/marco.jpg);
+}
 .victor {
   background: url(/images/victorbg.jpg);
   background-position: center !important;
 }
-
 /*SERVICE MODAL*/
 
 .service-modal {
