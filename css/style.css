@@ -181,6 +181,10 @@ canvas {
   color: white !important;
 }
 
+.no-padding {
+  padding: 0;
+}
+
 .separator {
   height: 1px;
   background-color: #fad925 !important;
@@ -646,6 +650,65 @@ canvas {
   text-align: center !important;
   margin-bottom: 30px;
   font-size: 1.2em;
+}
+
+/*
+
+Schedule
+
+*/
+.schedule {
+  position: relative;
+  height: 500px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.schedule .bg-schedule {
+  background: url(/images/bg/horarios.jpg);
+  height: 500px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -10;
+  -webkit-filter: grayscale(10);
+          filter: grayscale(10);
+}
+
+.schedule .schedule-container {
+  border: 5px solid #fad925;
+  z-index: 10;
+  width: 25%;
+  /* padding: 65px; */
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: url(/images/logolionblanco.png);
+  background-position: center;
+  background-size: contain;
+}
+
+.schedule .schedule-container .info-container {
+  height: 100%;
+  background-color: #00000094;
+  width: 100%;
+  padding: 65px;
+}
+
+.schedule .schedule-container .info-container h4 {
+  color: white;
+  font-size: 2em;
+}
+
+.schedule .schedule-container .info-container p {
+  color: white;
+  font-size: 1.5em;
 }
 
 /*ANIMATIONS*/

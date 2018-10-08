@@ -234,7 +234,6 @@ function startServicesEvents() {
 function changeBg() {
   var images = [
     '/images/bg/bg4.jpg',
-    '/images/bg/bg5.jpg',
     '/images/bg/bg6.jpg',
     '/images/bg/bg7.jpg'
   ];
@@ -244,7 +243,6 @@ function changeBg() {
       images = [
         '/images/bg/bg1.jpg',
         '/images/bg/bg4.jpg',
-        '/images/bg/bg5.jpg',
         '/images/bg/bg6.jpg',
         '/images/bg/bg7.jpg'
       ];
