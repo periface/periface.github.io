@@ -1,18 +1,26 @@
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
-const Engine = Matter.Engine,
-  Render = Matter.Render,
-  Runner = Matter.Runner,
-  Bodies = Matter.Bodies,
-  Composite = Matter.Composite;
+const {
+  Engine,
+  Render,
+  Runner,
+  Bodies,
+  Composite,
+  Mouse,
+  World,
+  MouseConstraint,
+  Constraint,
+} = Matter;
 let engine;
 let render;
 let world;
 let elements = [];
-let backgroundParticles = [];
+let boxes = [];
 let ground;
 let techo;
+let ball;
+let cannon;
 function setup() {
   engine = Engine.create();
   render = Render.create({
@@ -28,7 +36,7 @@ function setup() {
   world = engine.world;
 }
 function canAdd() {
-  return elements.length <= 20;
+  return elements.length <= 5;
 }
 function createRandom() {
   const radius = Math.random() * (30 - 4) + 10;
@@ -54,9 +62,22 @@ function createRandom() {
     }
   }, 500);
 }
+
+function buildMap() {
+  for (let index = 0; index < 5; index++) {
+    boxes[index] = new Rectangle({
+      x: canvas.width - 100,
+      y: canvas.height - index * 75,
+      w: 100,
+      h: 100,
+    });
+  }
+}
+
 const init = () => {
   setup();
-  createRandom();
+
+  //createRandom();
   ground = new Rectangle({
     x: 0,
     y: canvas.height,
@@ -64,22 +85,20 @@ const init = () => {
     h: 30,
     isStatic: true,
   });
-  new Rectangle({
-    x: 0,
-    y: 0,
-    w: 10,
-    h: canvas.height * 2,
-    isStatic: true,
-  });
-  new Rectangle({
-    x: canvas.width,
-    y: 0,
-    w: 10,
-    h: canvas.height * 2,
-    isStatic: true,
-  });
+  ball = new Circle({ x: 100, y: canvas.height / 2, r: 10 });
+  cannon = new Cannon({ x: 100, y: canvas.height / 2, body: ball.body });
+  // cannon.draw();
   Render.run(render);
+  const mouse = Mouse.create(canvas);
+  const options = {
+    mouse: mouse,
+  };
+
+  const mConstraint = MouseConstraint.create(engine, options);
+  World.add(world, mConstraint);
+
   startLoop();
+  buildMap();
 };
 init();
 function startLoop() {

@@ -6,5 +6,4 @@ class Circle {
     this.r = r;
     this.body.isStatic = isStatic;
   }
-  draw() {}
 }

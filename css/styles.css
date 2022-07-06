@@ -39,7 +39,9 @@ body {
 .container p {
     font-size: 2em;
 }
-
+canvas{
+    z-index: 9999;
+}
 .container q,
 a {
     font-size: 1.3em;
