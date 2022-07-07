@@ -34,13 +34,13 @@ body {
     width: 100%;
     height: 100vh;
     flex-wrap: wrap;
+    color: white;
 }
 
 .container p {
     font-size: 2em;
 }
 canvas{
-    z-index: 9999;
 }
 .container q,
 a {
