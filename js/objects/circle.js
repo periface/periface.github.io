@@ -57,13 +57,18 @@ class Circle {
       if (this.framesCurrent < this.framesMax - 1) {
         this.framesCurrent++;
       } else {
+        this.animationEnded = true;
         this.framesCurrent = 0;
       }
     }
   }
   update() {
-    this.drawImage();
-    this.animateFrames();
-    Matter.Engine.update(engine);
+    try {
+      this.drawImage();
+      this.animateFrames();
+      //Matter.Engine.update(engine); //INNECESARIO
+    } catch (error) {
+      console.warn("No hay animaciones definidas");
+    }
   }
 }
