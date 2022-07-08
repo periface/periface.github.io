@@ -14,7 +14,7 @@ const {
 let engine;
 let render;
 let world;
-let elements = [];
+let stars = [];
 let boxes = [];
 let backgroundElm = [];
 let explosions = [];
@@ -72,7 +72,7 @@ function createRandomStars() {
       }
       //Velocity langs[Math.floor(Math.random() * langs.length)]
       let starImg = `/img/stars/${getRandomStarImg()}`;
-      elements.push(
+      stars.push(
         new Rectangle({
           x,
           y,
@@ -138,6 +138,31 @@ function startLoop() {
   ) {
     let explosion = explosions[explosionIndex];
     if (explosion.animationEnded) {
+      explosion.destroy();
+      explosions.splice(explosionIndex, 0);
+    } else {
+      explosion.update();
+    }
+  }
+
+  for (let starsIndex = stars.length - 1; starsIndex >= 0; starsIndex--) {
+    let star = stars[starsIndex];
+
+    if (star.isOffScreen()) {
+      star.destroy();
+      stars.splice(starsIndex, 0);
+      console.log(stars.length);
+    }
+  }
+
+  for (
+    let explosionIndex = explosions.length - 1;
+    explosionIndex >= 0;
+    explosionIndex--
+  ) {
+    let explosion = explosions[explosionIndex];
+    if (explosion.animationEnded) {
+      explosion.destroy();
       explosions.splice(explosionIndex, 0);
     } else {
       explosion.update();

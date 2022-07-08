@@ -71,4 +71,15 @@ class Circle {
       console.warn("No hay animaciones definidas");
     }
   }
+  destroy() {
+    Matter.World.remove(world, this);
+  }
+  isOffScreen() {
+    let position = this.body.position;
+    if (position.y > canvas.height + 100) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

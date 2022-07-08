@@ -24,4 +24,15 @@ class Rectangle {
       };
     }
   }
+  destroy() {
+    Matter.World.remove(world, this);
+  }
+  isOffScreen() {
+    let position = this.body.position;
+    if (position.y > canvas.height + 100) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
