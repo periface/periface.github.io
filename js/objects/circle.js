@@ -19,8 +19,8 @@ class Circle {
       this.scale = animationOptions.scale || 1;
       this.framesCurrent = 0;
       this.framesElapsed = 0;
-      this.framesHold = 5;
-      this.offset = animationOptions.offset;
+      this.framesHold = animationOptions.framesHold || 5;
+      this.offset = animationOptions.offset || { x: 0, y: 0 };
     }
 
     if (disablePhysics) {
@@ -31,11 +31,16 @@ class Circle {
       };
     }
     Matter.World.add(world, this.body);
-    try {
-      this.image = new Image();
-      this.image.src = this.imageSrc;
-    } catch (error) {
-      console.log("no se pudo construir la imagen");
+    if (animationOptions && animationOptions.imageSrc) {
+      try {
+        this.image = new Image();
+        this.image.src = this.imageSrc;
+        this.image.onload = () => {
+          this.imageLoaded = true;
+        };
+      } catch (error) {
+        console.log("no se pudo construir la imagen");
+      }
     }
   }
   drawImage() {
@@ -64,11 +69,13 @@ class Circle {
   }
   update() {
     try {
-      this.drawImage();
-      this.animateFrames();
+      if (this.imageLoaded) {
+        this.drawImage();
+        this.animateFrames();
+      }
       //Matter.Engine.update(engine); //INNECESARIO
     } catch (error) {
-      console.warn("No hay animaciones definidas");
+      console.warn("No hay animaciones definidas", error);
     }
   }
   destroy() {
@@ -76,7 +83,11 @@ class Circle {
   }
   isOffScreen() {
     let position = this.body.position;
-    if (position.y > canvas.height + 100) {
+    if (
+      position.y > canvas.height + 100 ||
+      position.x > canvas.width + 100 ||
+      position.x < -100
+    ) {
       return true;
     } else {
       return false;

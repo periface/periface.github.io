@@ -27,7 +27,7 @@ body {
     display: flex;
     align-items: center;
     align-content: center;
-    justify-content: center;
+    justify-content: flex-start;
     justify-self: center;
     font-size: 1%;
     text-align: center;
@@ -35,12 +35,13 @@ body {
     height: 100vh;
     flex-wrap: wrap;
     color: white;
+    margin-top: 10%;
 }
 
 .container p {
     font-size: 2em;
 }
-canvas{
+canvas {
 }
 .container q,
 a {
