@@ -23,7 +23,6 @@ let htmlBox;
 let husky;
 let ground;
 let table;
-let coffe;
 let images = [
   {
     img: "../img/red-bull.png",
@@ -33,10 +32,17 @@ let images = [
     },
   },
   {
-    img: "../img/book.png",
+    img: "../img/book2.png",
     scale: {
-      xScale: 0.02,
-      yScale: 0.02,
+      xScale: 0.1,
+      yScale: 0.1,
+    },
+  },
+  {
+    img: "../img/coffe.png",
+    scale: {
+      xScale: 0.05,
+      yScale: 0.05,
     },
   },
 ];
@@ -84,29 +90,13 @@ function init() {
       },
     },
   });
-  coffe = new Rectangle({
-    x: table.body.position.x - 100,
-    y: table.body.position.y - table.h,
-    w: 30,
-    h: 30,
-    bodyRestitution: 0,
-    options: {
-      render: {
-        sprite: {
-          texture: "../img/coffe.png",
-          xScale: 0.05,
-          yScale: 0.05,
-        },
-      },
-    },
-  });
 
   showObjects();
   Render.run(render);
   startLoop();
 }
 function showObjects() {
-  var stack = Composites.stack(
+  Composites.stack(
     pc.body.position.x,
     pc.body.position.y - pc.h,
     2,
@@ -115,7 +105,6 @@ function showObjects() {
     15,
     function (x, y) {
       var image = images[Math.floor(Math.random() * images.length)];
-
       return new Rectangle({
         x: x,
         y: y,
