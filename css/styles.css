@@ -59,3 +59,13 @@ h3 {
     margin-bottom: 0.5em;
     border-bottom: 1px solid rgba(68, 17, 255, 0.829);
 }
+@media all and (max-width: 667px) {
+    .container {
+        width: 100%;
+        margin-left: 0%;
+        padding: 3em;
+    }
+    h3 {
+        font-size: 7em;
+    }
+}
