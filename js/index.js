@@ -96,7 +96,7 @@ function init() {
   startLoop();
 }
 function showObjects() {
-  Composites.stack(
+  let composite = Composites.stack(
     pc.body.position.x,
     pc.body.position.y - pc.h,
     2,
@@ -122,6 +122,7 @@ function showObjects() {
       }).body;
     }
   );
+  console.log(composite);
   ground = new Rectangle({
     x: 0,
     y: canvas.height,
