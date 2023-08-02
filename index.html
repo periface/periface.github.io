@@ -1,46 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alan Torres Dev</title>
-    <link rel="stylesheet" href="/css/styles.css" />
-  </head>
-  <body>
-    <div class="canvas-container">
-      <canvas id="matterContainer"></canvas>
-      <div class="container">
-        <h3>BIENVENIDO.</h3>
-        <p>
-          Soy <strong>Alan Torres</strong> desarrollador Web Full Stack, radico
-          en Cd. Victoria Tamaulipas, MX.
-        </p>
-        <br />
-        <p>
-          Me enfoco en tecnologías serverless, desarrollo de backend en C# así
-          como diseño de sitios web y aplicaciones híbridas para dispositivos
-          móviles
-        </p>
-        <br />
-        <p>
-          Me especializo en optimización de código e implementación de
-          paradigmas POO
-        </p>
-        <br />
-        <p>
-          <strong>-Me apasiona resolver problemas-</strong>
-        </p>
-        <br />
-        <br />
-        <p>
-          <strong>Experimentemos:</strong>
-        </p>
-        <p>
-          <a href="/experiments/recursive-tree/index.html"> Árbol fractal </a>
-        </p>
-      </div>
+    <!-- <link rel="stylesheet" href="/css/styles.css" /> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-800">
+    <div class="w-full text-white h-[90vh] p-10">
+        <div class="grid relative md:grid-cols-2 bg-gray-900 md:h-[90vh] rounded-lg shadow-lg shadow-cyan-500/50">
+            <div class="absolute w-[500px] bottom-0 right-0 z-0 animate-pulse ease-in-out duration-500">
+                <img src="/img/SVG/neon1.svg" alt="">
+            </div>
+            <div class="absolute w-[500px] z-0 opacity-30 animate-pulse ease-in-out duration-2000">
+                <img src="/img/SVG/neon1.svg" alt="">
+            </div>
+            <div class="md:p-10 p-5 z-10">
+                <h2 class="md:text-4xl font-bold text-2xl  mb-3 w-4/6">HOLA,
+                    <span>SOY ALAN TORRES</span>
+                </h2>
+                <p class="md:text-xl">
+                    <strong>Desarrollador Web Full Stack, Tamaulipeco.</strong> <br><br>
+                    Egresado de la <strong>Universidad Autónoma de Tamaulipas</strong>; me enfoco en tecnologías
+                    serverless, desarrollo
+                    de backend en C#, mucho javascript y/o typescript,
+                    así como diseño de sitios web y aplicaciones híbridas para dispositivos móviles.
+
+                </p>
+                <p class="md:text-4xl font-bold md:mt-10 mt-5">
+                    Me encanta resolver <a
+                        class="hover:text-blue-500 border-b-2 transition-all ease-in-out duration-500"
+                        href="#">problemas</a>
+                </p>
+            </div>
+            <div class="md:p-10 p-5 z-10">
+                <img class="m-auto md:w-2/2 w-3/4 rounded-full shadow-2xl shadow-black"
+                    src="https://avatars.githubusercontent.com/u/8449812?s=400&u=6d4dde66f9e58356de62defa76c7a5503bf7be34&v=4"
+                    alt="">
+            </div>
+        </div>
+
     </div>
+
+
+
+    <!-- <div class="canvas-container">
+        <canvas id="matterContainer"></canvas>
+        <div class="container">
+            <h3>BIENVENIDO.</h3>
+            <p>
+                Soy <strong>Alan Torres</strong> desarrollador Web Full Stack, radico
+                en Cd. Victoria Tamaulipas, MX.
+            </p>
+            <br />
+            <p>
+                Me enfoco en tecnologías serverless, desarrollo de backend en C# así
+                como diseño de sitios web y aplicaciones híbridas para dispositivos
+                móviles
+            </p>
+            <br />
+            <p>
+                Me especializo en optimización de código e implementación de
+                paradigmas POO
+            </p>
+            <br />
+            <p>
+                <strong>-Me apasiona resolver problemas-</strong>
+            </p>
+            <br />
+            <br />
+            <p>
+                <strong>Experimentemos:</strong>
+            </p>
+            <p>
+                <a href="/experiments/recursive-tree/index.html"> Árbol fractal </a>
+            </p>
+        </div>
+    </div> -->
 
     <!-- <div style="min-height: 1000px"></div> -->
     <!-- <img src="/img/stars/Stars_01.png" alt="" /> -->
@@ -53,5 +93,6 @@
     <script src="/js/objects/rectangle.js"></script>
     <script src="/js/objects/circle.js"></script>
     <script src="/js/index.js"></script>
-  </body>
+</body>
+
 </html>
