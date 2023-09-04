@@ -7,6 +7,7 @@
     <title></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos.css" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -20,7 +21,19 @@
   </head>
   <body> 
 
-    <section id="header">
+    <header id="header">
+      <section id="liston-superior">
+        <div class="container">
+          <div class="row mt-3 mb-3">
+            <div class="contenido  col-12">
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <section id="header-logo">
       <div class="container">
         <div class="row" id="row-cabecera">
 
@@ -31,7 +44,6 @@
         </div>
       </div>
     </section> 
-
 
     <section class="container" id="form-aptra">
 
@@ -254,6 +266,91 @@
 
     </section>
 
+    <footer id="footer">
+    
+      <div class="container">
+        <div id="footer-rows" class="row">
+
+          <div class="col-12 col-sm-12 col-md-12 col-lg-4 informacion text-center">
+            <div class="contenido">
+
+              <h2 class="mb-3">Gobierno del Estado de Tamaulipas <span class="footer-line"></span></h2>
+              <img class="img-fluid center-block escudo mb-3" src="./escudo-tam-dorado.png" alt="">
+              <p>
+                Administración 2022 - 2028<br> 15 y 16 Juárez - Palacio de Gobierno - 3er Piso<br> Cd. Victoria, Tamaulipas, México CP 87000<br>
+                <a href="tel:+8343188000">834.318.8000</a><br>
+                <a href="tel:+8006333333"> 800.6333333</a> Lada sin costo para todo el país
+              </p>
+
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-12 col-md-12 col-lg-7 informacion">
+
+            <div class="col-md-6 contenido d-flex justify-content-center">
+              <div class="contenido">
+
+                <h2 class="text-center">nuestras redes sociales: <span class="footer-line"></span></h2>
+                  <div class="row">
+                    <div class="col-6">
+                      <ul id="rds-sociales" class="clean-list">
+                        <li class="li-fb">
+                          <a href="https://www.facebook.com/GobTamaulipas" target="_blank"  rel="noopener">
+                            <i class="fa fa-facebook-square"></i> 
+                            Facebook
+                          </a>
+                        </li>
+                        <li class="li-tw">
+                          <a href="https://twitter.com/gobtam" target="_blank" rel="noopener">
+                            <i class="fa fa-twitter-square"></i>
+                            Twitter
+                          </a>
+                        </li>
+                        <li class="li-inst">
+                          <a href="https://www.instagram.com/gobtam/" target="_blank" rel="noopener">
+                            <i class="fa fa-instagram"></i>
+                            Instagram
+                          </a>
+                        </li>
+                         <li class="li-yt">
+                          <a href="https://www.youtube.com/channel/UCW-h4CqM4PdWjObH2FSfwPA" target="_blank" rel="noopener">
+                            <i class="fa fa-youtube"></i>
+                            YouTube</a></li>
+                      </ul>
+                    </div>
+                  </div>
+
+              </div>
+            </div>
+
+
+
+          </div>
+
+
+
+        </div>
+      </div>
+
+
+      <div class="terminos-y-condiciones">
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+
+            <div class="col-lg-7 text-center mt-3 mb-3">
+              <strong>Todos los derechos reservados © <?php echo date("Y"); ?> | Gobierno del Estado de Tamaulipas 2022 - 2028 <br> </strong>
+              <a href="https://www.tamaulipas.gob.mx/aviso-de-privacidad/" class="enlaces">Aviso de privacidad</a> |
+              <a href="https://www.tamaulipas.gob.mx/terminos-y-condiciones/" class="enlaces">Términos y condiciones</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </footer>
+
+
+
     <!-- Modal tomar foto-->
     <div class="modal fade" id="exampleFoto" tabindex="-1" aria-labelledby="exampleFotoLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
@@ -369,6 +466,8 @@
       </div>
     </div>
     <!-- /Modal tomar foto-->
+
+
 
     <script type="text/javascript">
     $(document).ready(function() {
