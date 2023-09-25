@@ -25,7 +25,7 @@
   <header id="header">
     <section id="liston-superior">
       <div class="container">
-        <div class="row mt-3 mb-3">
+        <div class="row mb-3">
           <div class="contenido  col-12">
 
           </div>
@@ -211,6 +211,7 @@
           </div>
         </div>
         <div class="accordion-item mb-5">
+
           <h2 class="accordion-header" id="panels-tres">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapse-tres" aria-expanded="false" aria-controls="collapse-tres">
@@ -222,8 +223,22 @@
             </button>
           </h2>
           <div id="collapse-tres" class="accordion-collapse collapse show" aria-labelledby="panels-tres">
-            <div class="accordion-body mt-3">
 
+            <div class="accordion-body mt-3">
+              <div class="row">
+
+                <div class="col-12">
+                  <label for="" class="form-label mb-3 fs-6">Requisitos</label>
+                  <ul>
+                    <li>Fondo blanco con suficiente iluminación.</li>
+                    <li>Camisa blanca.</li>
+                    <li>Rostro despejado, sin lentes o accesorios que cubran tu rostro.</li>
+                    <li>Colócate en la silueta roja.</li>
+                    <li>Si eres mujer, recoge tu cabello o ubicalo delante de los hombros.</li>
+                  </ul>
+                </div>
+
+              </div>
 
               <div id="fotoMain" class="row d-flex justify-content-center mt-5">
 
@@ -383,14 +398,6 @@
         <div class="modal-body">
 
           <div class="tomar-foto">
-            <ol class="list-group list-group-numbered">
-              <label for="" class="form-label mb-2 fs-6">Requisitos</label>
-              <li class="list-group-item">Fondo blanco con suficiente iluminación.</li>
-              <li class="list-group-item">Camisa blanca.</li>
-              <li class="list-group-item">Rostro despejado, sin lentes o accesorios que cubran tu rostro.</li>
-              <li class="list-group-item">Colócate en la silueta roja.</li>
-              <li class="list-group-item">Si eres mujer, recoge tu cabello o ubicalo delante de los hombros.</li>
-            </ol>
             <div class="mt-3 mb-3 d-flex justify-content-center">
               <img src="./ejemplo.png" id="ejemploFotoImg" alt="" class="img-fluid" height="65px">
             </div>
@@ -461,15 +468,6 @@
         <div class="modal-body">
 
           <div class="tomar-foto">
-            <ol class="list-group list-group-numbered">
-              <label for="" class="form-label mb-2 fs-6">Instrucciones</label>
-              <li class="list-group-item">Subir fotografía en formato JPG.</li>
-              <li class="list-group-item">Fondo blanco con suficiente iluminación.</li>
-              <li class="list-group-item">Camisa blanca.</li>
-              <li class="list-group-item">Rostro despejado, sin lentes o accesorios que cubran tu rostro.</li>
-              <li class="list-group-item">Si eres mujer, debes además recoger tu cabello o ubicarlo delante de los
-                hombros.</li>
-            </ol>
             <div class="mt-3 mb-3 d-flex justify-content-center">
 
               <div class="subir-foto" id="subirFotoContainer">
@@ -485,6 +483,8 @@
               </div>
 
             </div>
+            <label for="" class="text-uppercase mensaje"> <span>*</span> Subir fotografía en formato .JPG, tamaño máximo
+              5 mb</label>
             <!--
                 oculto por que uso onchange en el input
 

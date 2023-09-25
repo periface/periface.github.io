@@ -7,19 +7,21 @@ body {
 }
 
 :root {
-  --rojo: #ab0033!important;
-  --rojo-o:#761830!important;
-  --beige: #ddc9a3!important;
-  --dorado: #bc955c!important;
-  --gris: #54565a!important;
-  --gris-oscuro:#313234!important;
-  --body:#45494c!important;
+  --rojo: #ab0033 !important;
+  --rojo-o: #761830 !important;
+  --beige: #ddc9a3 !important;
+  --dorado: #bc955c !important;
+  --gris: #54565a !important;
+  --gris-oscuro: #313234 !important;
+  --body: #45494c !important;
   --font: 'Encode Sans', sans-serif;
-  --vino: #651128!important;
-  --bg-gris:#f8f9fa;
+  --vino: #651128 !important;
+  --bg-gris: #f8f9fa;
 }
 
-*, ::after, ::before {
+*,
+::after,
+::before {
   box-sizing: border-box;
 }
 
@@ -32,7 +34,9 @@ a {
   text-decoration: none;
 }
 
-a:hover, a:focus, a:active {
+a:hover,
+a:focus,
+a:active {
   text-decoration: none;
 }
 
@@ -46,12 +50,17 @@ a:hover, a:focus, a:active {
   display: inline-block;
 }
 
-.relative{position: relative;}
-.absolute{position: absolute;}
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
 
 
 /*header*/
-#header{
+#header {
   background: var(--rojo);
   border-bottom: 7px solid var(--dorado);
   height: 50px;
@@ -71,19 +80,19 @@ a:hover, a:focus, a:active {
 }
 
 div#footer-rows {
-    padding: 80px 0 30px 0;
-    color: #c8c9c9;
+  padding: 80px 0 30px 0;
+  color: #c8c9c9;
 }
 
 #footer-rows .informacion {
   line-height: 20px;
   font-size: .9em;
-/*  display: flex;
+  /*  display: flex;
   justify-content: center;*/
 }
 
 #footer h2 {
-  font-size: 1rem!important;
+  font-size: 1rem !important;
   text-transform: uppercase;
   font-weight: bold;
   color: #fff;
@@ -108,13 +117,13 @@ img.escudo {
   color: #fff;
 }
 
-#rds-sociales li{
+#rds-sociales li {
   display: block;
   margin: 0 auto;
   color: #c8c9c9;
 }
 
-#rds-sociales a{
+#rds-sociales a {
   line-height: 30px;
   color: #c8c9c9;
   display: inline-block;
@@ -128,14 +137,15 @@ img.escudo {
   text-decoration: underline;
 }
 
-#rds-sociales i{
+#rds-sociales i {
   font-size: 22px;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
   margin-right: 12px;
 }
 
-#rds-sociales li a:hover i, #apps-gob li a:hover i {
+#rds-sociales li a:hover i,
+#apps-gob li a:hover i {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
@@ -152,18 +162,18 @@ img.escudo {
 }
 
 #footer-rows .informacion {
-    line-height: 20px;
-    font-size: .9em;
-    display: flex;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    justify-content: center;
-    -webkit-justify-content: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -moz-flex-pack: center;
+  line-height: 20px;
+  font-size: .9em;
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -moz-flex-pack: center;
 }
 
 /*css formulario*/
@@ -171,21 +181,21 @@ img.escudo {
   font-weight: 300;
 }
 
-#form-aptra .titulo-page{
-  color:var(--rojo);
+#form-aptra .titulo-page {
+  color: var(--rojo);
 }
 
-#form-aptra .subtitulo-page{
+#form-aptra .subtitulo-page {
   font-weight: 400;
 }
 
-#form-aptra .accordion-item{
+#form-aptra .accordion-item {
   border: 0;
 }
 
 #form-aptra .accordion-button,
 #form-aptra .accordion-button:not(.collapsed) {
-  color:var(--body);
+  color: var(--body);
   background-color: var(--bg-gris);
   box-shadow: inherit;
   padding: .5rem 1.25rem .5rem 6.25rem;
@@ -196,11 +206,11 @@ img.escudo {
   font-weight: 500;
 }
 
-#form-aptra .accordion-button:not(.collapsed)::after{
-  background-image:url('./arrow.svg');
+#form-aptra .accordion-button:not(.collapsed)::after {
+  background-image: url('./arrow.svg');
 }
 
-#form-aptra .bg-paso{
+#form-aptra .bg-paso {
   background-color: var(--rojo);
   color: #fff;
   padding: 7px 18px;
@@ -210,33 +220,34 @@ img.escudo {
   font-size: .7rem;
 }
 
-#form-aptra .bg-paso span{
+#form-aptra .bg-paso span {
   font-size: 2rem;
 }
 
-.accordion-body span ,label span{
+.accordion-body span,
+label span {
   color: red;
   font-weight: 500;
 }
 
-input.form-control{
+input.form-control {
   font-weight: 500;
 }
 
-#form-aptra .list-group .list-group-item{
- border:0;
- border-radius: 0;
+#form-aptra .list-group .list-group-item {
+  border: 0;
+  border-radius: 0;
 }
 
-.list-group-light{
+.list-group-light {
   background-color: #ecedee;
 }
 
-.list-group-dark{
+.list-group-dark {
   background-color: #f8f9fa;
 }
 
-.formato-ine{
+.formato-ine {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
@@ -253,7 +264,7 @@ input.form-control{
   right: -8px;
 }
 
-.img-ine{
+.img-ine {
   padding: 10px;
   height: 100%;
   display: flex;
@@ -262,23 +273,25 @@ input.form-control{
   position: relative;
 }
 
-#ine-frente, #ine-reverso {
+#ine-frente,
+#ine-reverso {
   display: none;
 }
 
-.img-ine:hover{
+.img-ine:hover {
   opacity: .3;
 }
 
-.ine-frente{
+.ine-frente {
   background-image: url('./FRENTE_INE.png');
 }
 
-.ine-reverso{
+.ine-reverso {
   background-image: url('./REVERSO_INE.png');
 }
 
-.ine-frente,.ine-reverso{
+.ine-frente,
+.ine-reverso {
   width: 100%;
   height: 100%;
   background-size: contain;
@@ -290,19 +303,19 @@ input.form-control{
   cursor: pointer;
 }
 
-.conte-titulos h6{
+.conte-titulos h6 {
   font-weight: 300;
 }
 
-.conte-titulos h6 b{
+.conte-titulos h6 b {
   font-weight: 900;
   color: var(--rojo);
 }
 
-.formato-foto{
+.formato-foto {
   height: 200px;
   padding: 10px;
-  background-color:#ecedee;
+  background-color: #ecedee;
   border-radius: 12px;
   display: flex;
   justify-content: center;
@@ -310,68 +323,71 @@ input.form-control{
   cursor: pointer;
 }
 
-.formato-foto:hover.formato-foto i{
-    opacity: .3;
-    color: var(--rojo);
+.formato-foto:hover.formato-foto i {
+  opacity: .3;
+  color: var(--rojo);
 }
 
-.formato-foto i{
+.formato-foto i {
   font-size: 4.5rem;
 }
 
-.enviar-btn button{
+.enviar-btn button {
   background-color: var(--rojo);
   color: #fff;
 }
 
-.enviar-btn button:hover{
+.enviar-btn button:hover {
   color: #fff;
 }
 
-.modal{
+.modal {
   font-weight: 400;
 }
 
-.tomar-foto .list-group-item{
+.tomar-foto .list-group-item {
   border: 0;
   padding: 0 1rem;
 }
 
-.tomar-foto .mensaje{
+.tomar-foto .mensaje {
   font-weight: 900;
 }
 
-.tomar-foto button{
+.tomar-foto button {
   background-color: var(--rojo);
 }
 
-.modal-content .modal-header{
+.modal-content .modal-header {
   background-color: #ecedee;
   padding: 0.5rem 1rem;
 }
-.modal-content .modal-header h6{
+
+.modal-content .modal-header h6 {
   font-weight: 1.2rem;
 }
-.modal-content .btns-previous button{
+
+.modal-content .btns-previous button {
   background-color: var(--rojo);
   color: #fff;
 }
-#previousFoto i{
+
+#previousFoto i {
   font-size: 2.2rem;
 }
 
-.subir-foto{
+.subir-foto {
   height: 150px;
   width: 300px;
   padding: 10px;
-  background-color:#ecedee;
+  background-color: #ecedee;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   position: relative;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .subir-foto:before {
@@ -413,13 +429,22 @@ input.form-control{
   align-items: center;
 }
 
-.up-foto:before{
+.up-foto:before {
   content: "\e09a";
   font: normal normal normal 14px/1 FontAwesome;
   font-size: 3.5rem
 }
 
 /*ejemplo imagenes borrar*/
-.tomar-foto img, .previous-foto img{
+.tomar-foto img,
+.previous-foto img {
   max-height: 200px;
+}
+
+/*
+  AJUSTES ALAN TORRES
+*/
+.tomar-foto img,
+.previous-foto img {
+  max-height: 300px !important;
 }

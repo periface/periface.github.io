@@ -142,3 +142,25 @@ async function uploadFotoProcess() {
         successImgResultDIV.style.display = 'block';
     }, 5000);
 }
+
+
+
+// async function accessCamera() {
+//     try {
+//         const constraints = {
+//             video: true,
+//         };
+//         const stream = await navigator.mediaDevices.getUserMedia(constraints);
+//         const video = document.querySelector('video');
+//         video.srcObject = stream;
+//         video.onloadedmetadata = () => {
+//             video.play();
+//             ejemploFotoIMG.src = './img/loading.gif';
+
+//         };
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
+
+// accessCamera();
